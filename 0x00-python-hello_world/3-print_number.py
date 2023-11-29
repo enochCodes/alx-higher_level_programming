@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: cp1252 -*-
+# -*- coding: encoding -*-
 number = 98
-print(f"{number} Battery street\n")
+print(f"{number} Battery street")
