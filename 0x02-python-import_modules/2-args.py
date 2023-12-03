@@ -6,3 +6,5 @@ if __name__ == "__main__":
         print("{}: argument:".format(arg_nums))
         for i, arg in enumerate(sys.argv[1:], start=1):
             print("{}: {}".format(i, arg))
+    elif arg_nums == 0:
+        print("{} arguments.".format(arg_nums))
