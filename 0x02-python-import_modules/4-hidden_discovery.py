@@ -1,10 +1,18 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
-    """Print all names defined by hidden_4 module."""
-    import hidden_4
+import inspect
 
-    names = dir(hidden_4)
-    for name in names:
-        if name[:2] != "__":
-            print(name)
+def print_hidden_names():
+    with open("hidden_4.pyc", "rb") as f:
+        code = f.read()
+
+    module = compile(code, "hidden_4.py", "exec")
+    names = [name for name, obj in inspect.getmembers(module)
+             if not name.startswith("__")]
+
+    for name in sorted(names):
+        print(name)
+
+if __name__ == "__main__":
+    print_hidden_names()
+
