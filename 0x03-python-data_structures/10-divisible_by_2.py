@@ -3,8 +3,8 @@ def divisible_by_2(my_list=[]):
     result = []
     for num in my_list:
         if num % 2 == 0:
-            return result.append(True)
+            result.append(True)
         else:
-            return result.append(False)
+            result.append(False)
 
     return result
