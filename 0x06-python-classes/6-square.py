@@ -7,8 +7,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializes the square with the given size."""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -47,11 +47,21 @@ class Square:
         return self.__size**2
 
     def my_print(self):
+        #if self.__size == 0:
+            #print()
+            #return
+        #for _ in range(self.position[1]):
+            #print()
+        #for _ in range(self.size):
+            #print(" " * self.position[0], end="")
+            #print("#" * self.size)
         if self.__size == 0:
             print()
             return
-        for _ in range(self.position[1]):
+
+        for i in range(self.__position[1]):
             print()
-        for _ in range(self.size):
-            print(" " * self.position[0], end="")
-            print("#" * self.size)
+
+        for _ in range(self.__size):
+            print(" " * self.__position[0], end="")
+            print("#" * self.__size)
