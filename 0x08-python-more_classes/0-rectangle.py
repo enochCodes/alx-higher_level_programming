@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" 0-rectangle: class Rectangle """
+"""
+    0-rectangle: class Rectangle
+"""
 
 
 class Reactangle:
