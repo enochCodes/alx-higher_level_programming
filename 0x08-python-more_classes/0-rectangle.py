@@ -4,7 +4,7 @@
 """
 
 
-class Reactangle:
+class Rectangle:
     """
         An empty class
     """
