@@ -2,4 +2,3 @@
 class Rectangle:
     """noting in hear"""
     pass
-
