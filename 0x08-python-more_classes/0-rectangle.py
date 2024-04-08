@@ -1,11 +1,4 @@
- #!/usr/bin/python3
- """
-    0-rectangle: class Rectangle
-"""
+#!/usr/bin/python3
 
-
-class Rectangle:
-    """
-        An empty class
-    """
+class Reactangle:
     pass
