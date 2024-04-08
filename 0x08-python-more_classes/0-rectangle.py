@@ -1,4 +1,11 @@
-#!/usr/bin/python3
+ #!/usr/bin/python3
+ """
+    0-rectangle: class Rectangle
+"""
+
+
 class Rectangle:
-    """noting in hear"""
+    """
+        An empty class
+    """
     pass
