@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    0-rectangle: class Rectangle
+    1-rectangle: class Rectangle
 """
 
 
@@ -18,9 +18,7 @@ class Rectangle:
                 width (int): width of the rectangle
                 height (int): height of the rectangle
         """
-        self.width = width
-        self.height = height
-        """if isinstance(width, int):
+        if isinstance(width, int):
             if width < 0:
                 raise ValueError("width must be >= 0")
             self.__width = width
@@ -32,7 +30,7 @@ class Rectangle:
                 raise ValueError("height must be >= 0")
             self.__height = height
         else:
-            raise TypeError("height must be an integer") """
+            raise TypeError("height must be an integer")
 
     @property
     def width(self):
@@ -49,12 +47,11 @@ class Rectangle:
             Args:
                 value (int): new width value
         """
-        if isinstance(value, int):
-            if value < 0:
-                raise ValueError("width must be >= 0")
-            self.__width = value
-        else:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     @property
     def height(self):
@@ -71,9 +68,8 @@ class Rectangle:
             Args:
                 value (int): new height value
         """
-        if isinstance(value, int):
-            if value < 0:
-                raise ValueError("height must be >= 0")
-            self.__height = value
-        else:
-            raise TypeError("height must be integer")
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
