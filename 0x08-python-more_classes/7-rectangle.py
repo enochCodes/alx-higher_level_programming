@@ -22,7 +22,7 @@ class Rectangle:
                 height (int): height of the rectangle
         """
         Rectangle.number_of_instances += 1
- 
+
         if isinstance(width, int):
             if width < 0:
                 raise ValueError("width must be >= 0")
@@ -97,6 +97,7 @@ class Rectangle:
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
