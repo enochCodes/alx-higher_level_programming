@@ -1,0 +1,11 @@
+Description: Test MyList class print_sorted method
+
+Test Case 1:
+Input:
+- Create an instance of MyList
+- Append integers to the list: 1, 4, 2, 3, 5
+
+Expected Output:
+- Original list: [1, 4, 2, 3, 5]
+- Sorted list: [1, 2, 3, 4, 5]
+- Original list after sorting: [1, 4, 2, 3, 5]
