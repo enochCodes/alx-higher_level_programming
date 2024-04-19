@@ -1,19 +1,26 @@
 #!/usr/bin/python3
 """
+
     this module print the square
+
 """
 
 
 def print_square(size):
-    charactor = "#"
     """
-        print the square fro the argument size
-        args:
-            size
-        if size is not int reaise typeError
-        if size is less than 0 reaise ValueError
+        This function prints a square with the character #
+
+        Args:
+            size (int): This represents the length of the square
+
+        Raises:
+            TypeError: If size is not an integer
+            TypeError: If size is a float and less than zero
+            ValueError: If size is less than zero
+
     """
 
+    charactor = "#"
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
