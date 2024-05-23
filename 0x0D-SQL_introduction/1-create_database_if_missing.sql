@@ -1,11 +1,10 @@
 -- File: create_database.sql
--- Description: This script creates a new database named 'my_new_database' if it does not already exist.
+-- Description: This script attempts to create a new database named 'my_new_database' if it does not already exist.
 
--- Check if the database already exists
-SELECT SCHEMA_NAME
-FROM INFORMATION_SCHEMA.SCHEMATA
-WHERE SCHEMA_NAME = 'hbtn_0c_0';
-
--- If the database does not exist, createt
+-- Attempt to create the database if it does not exist
 CREATE DATABASE IF NOT EXISTS my_new_database;
+
+-- Optionally, you can verify the creation by listing all databases
+-- Note: This is optional and depends on project requirements
+-- SHOW DATABASES;
 
