@@ -1,6 +1,12 @@
 -- File: create_database.sql
--- Description: This script attempts to create a new database named 'my_new_database' if it does not already exist.
+-- Description: This script creates a new database named 'my_new_database' without creating any tables.
 
--- Attempt to create the database if it does not exist
-CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
+-- Start a transaction
+START TRANSACTION;
+
+-- Create the database if it does not exist
+CREATE DATABASE IF NOT EXISTS my_new_database;
+
+-- Commit the transaction
+COMMIT;
 
