@@ -5,7 +5,7 @@
 START TRANSACTION;
 
 -- Create the database if it does not exist
-CREATE DATABASE IF NOT EXISTS my_new_database;
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
 
 -- Commit the transaction
 COMMIT;
