@@ -1,10 +1,10 @@
--- File: 102-top_city.sql
--- Description: This script displays the top 3 cities' temperatures during July and August ordered by temperature (descending).
-
-SELECT city, AVG(temperature) AS avg_temp
-FROM temperatures
-WHERE month IN ('July', 'August')
+-- displays average temp by city for july and august in descending order
+CREATE TABLE IF NOT EXISTS temp_july_aug
+       SELECT *
+       FROM temperatures
+       WHERE month = 7 OR month = 8;
+SELECT city, AVG(value) AS avg_temp
+FROM temp_july_aug
 GROUP BY city
 ORDER BY avg_temp DESC
-LIMIT 3;
-
+limit 3;
