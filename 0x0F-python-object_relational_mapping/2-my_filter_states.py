@@ -10,6 +10,7 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     db_name = sys.argv[3]
+    state_name_searched = sys.argv[4]
 
     db = MySQLdb.connect(
             host="localhost",
@@ -21,7 +22,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT *FROM states WHERE name LIKE  BINARY 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT *FROM states WHERE name LIKE 'N%'")
 
     rows = cursor.fetchall()
 
