@@ -10,7 +10,7 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     db_name = sys.argv[3]
-    state_name_searched = sys.argv[4]
+    state_name = sys.argv[4]
 
     db = MySQLdb.connect(
             host="localhost",
@@ -21,8 +21,8 @@ if __name__ == "__main__":
             )
 
     cursor = db.cursor()
-
-    cursor.execute("SELECT *FROM states WHERE name LIKE 'N%'")
+    sql_query = ("SELECT * FROM states WHERE name = %s ORDER BY id ASC")
+    cursor.execute(sql_query, (state_name,))
 
     rows = cursor.fetchall()
 
