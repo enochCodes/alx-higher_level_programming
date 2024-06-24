@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    database connect feach the result wtih N
+    database connect feach the result wtih N serch
 """
 import MySQLdb
 import sys
@@ -21,7 +21,9 @@ if __name__ == "__main__":
             )
 
     cursor = db.cursor()
-    sql_query = ("SELECT * FROM states WHERE name = %s ORDER BY id ASC")
+    sql_query = (
+        "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+        )
     cursor.execute(sql_query, (state_name,))
 
     rows = cursor.fetchall()
