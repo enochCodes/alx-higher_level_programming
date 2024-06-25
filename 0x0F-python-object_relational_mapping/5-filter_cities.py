@@ -15,7 +15,7 @@ if __name__ == "__main__":
             (argv[4],)
             )
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+    cities = [result[0] for result in query_rows]
+    print(", ".join(cities))
     cur.close()
     conn.close()
