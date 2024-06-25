@@ -1,34 +1,20 @@
 #!/usr/bin/python3
-"""
-    connect database 2
-"""
+"""Lists states"""
+
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
-
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=db_name
-    )
-
-    cursor = db.cursor()
-
-    # Use parameterized query to avoid SQL injection
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
-
-    rows = cursor.fetchall()
-
-    for row in rows:
+    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3], charset="utf8")
+    cur = conn.cursor()
+    query = """
+SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC"""
+    query = query.format(argv[4])
+    cur.execute(query)
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
+    cur.close()
+    conn.close()
 
-    cursor.close()
-    db.close()

@@ -1,33 +1,23 @@
 #!/usr/bin/python3
-"""
-    Databse connect 1
-"""
+"""Lists states"""
+
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
-
-    # Connect to the MySQL server
     db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=db_name
-    )
-    cursor = db.cursor()
-
-    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-
-    cursor.execute(query)
-
-    rows = cursor.fetchall()
-
-    for row in rows:
-        print(row)
-
-    cursor.close()
+            host="localhost",
+            port=3306,
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3],
+            charset="utf8"
+            )
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        if row[1].startswith("N"):
+            print(row)
+    cur.close()
     db.close()
