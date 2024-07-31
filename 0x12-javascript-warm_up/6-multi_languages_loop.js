@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-
 // Array of strings to print
 const Languages = ["C is fun","Python is cool","JavaScript is amazing"];
 
